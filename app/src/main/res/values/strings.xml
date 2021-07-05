@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">UBBAssignment2</string>
+    <string name="movie_title">The Hobbit:<br /> An Unexpected Journey</string>
+    <string name="movie_characteristics">2012 | PG-13 | 2h 45min | Eng</string>
+    <string name="movie_poster">movie poster</string>
+    <string name="back_button">back button</string>
+    <string name="movie_description">A reluctant Hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home, and the gold within it from the dragon Smaug.</string>
+    <string name="rate_it">Rate it!</string>
+    <string name="percentage">64%</string>
+    <string name="tomato_meter_name">TOMATOMETER</string>
+    <string name="rating_text">7.8/10<br />759,039</string>
+    <string name="my_movies">My movies</string>
+    <string name="language">Language</string>
+    <string name="retry_button_text">Retry</string>
+    <string name="error_text">Something went wrong!</string>
+</resources>

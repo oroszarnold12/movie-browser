@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/ic_baseline_arrow_back_ios_24"
+                android:contentDescription="@string/back_button"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/toolbar"
+                app:layout_constraintStart_toStartOf="@+id/toolbar"
+                app:layout_constraintTop_toTopOf="@id/toolbar" />
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/message_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/work_sans_bold"
+            android:text="@string/error_text"
+            android:textColor="@color/dark_blue"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/retry_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/retry_button_text"
+            android:visibility="invisible"
+            app:cornerRadius="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/message_text_view" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/image_card_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintHeight_max="280dp"
+            app:layout_constraintStart_toEndOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/movie_poster"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/movie_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/work_sans_bold"
+            android:textAlignment="textStart"
+            android:textColor="@color/dark_blue"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintStart_toEndOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/image_card_view"
+            tools:text="@string/movie_title" />
+
+        <View
+            android:id="@+id/blue_line"
+            android:layout_width="0dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="216dp"
+            android:background="@color/rect_blue"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/movie_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/movie_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/characteristics"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/work_sans_medium"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintStart_toEndOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/blue_line"
+            tools:text="@string/movie_characteristics" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/movie_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/work_sans_medium"
+            android:textColor="@color/dark_blue"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/characteristics"
+            tools:text="@string/movie_description" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="16dp"
+            android:padding="0dp"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintStart_toEndOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/movie_description" />
+
+        <View
+            android:id="@+id/gray_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:background="#14212031"
+            android:visibility="invisible"
+            app:layout_constraintCircleRadius="7.5dp"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/chip_group" />
+
+        <RatingBar
+            android:id="@+id/rating_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:numStars="1"
+            android:progressTint="@color/star_yellow"
+            android:scaleX="0.7"
+            android:scaleY="0.7"
+            android:stepSize="0.1"
+            android:translationY="-10dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@id/rate_it"
+            app:layout_constraintStart_toEndOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/gray_line" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/rating_bar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/work_sans_medium"
+            android:textSize="12sp"
+            android:translationY="-16dp"
+            app:layout_constraintEnd_toStartOf="@id/rating_bar"
+            app:layout_constraintStart_toEndOf="@id/rating_bar"
+            app:layout_constraintTop_toBottomOf="@id/rating_bar"
+            tools:text="@string/rating_text" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/rate_it"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/work_sans_medium"
+            android:text="@string/rate_it"
+            android:textColor="@color/dark_blue"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:drawableTopCompat="@drawable/ic_baseline_star_outline_24"
+            app:layout_constraintEnd_toStartOf="@id/tomato_meter"
+            app:layout_constraintStart_toEndOf="@id/rating_bar"
+            app:layout_constraintTop_toTopOf="@id/rating_bar" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tomato_meter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/work_sans_medium"
+            android:textColor="@color/dark_blue"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:drawableTopCompat="@drawable/ic_rotten_tomatoes"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintStart_toEndOf="@id/rate_it"
+            app:layout_constraintTop_toTopOf="@id/rating_bar"
+            tools:text="@string/percentage" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tomato_meter_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/work_sans_medium"
+            android:text="@string/tomato_meter_name"
+            android:textColor="@color/dark_blue_with_opacity"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@id/tomato_meter"
+            app:layout_constraintStart_toEndOf="@id/tomato_meter"
+            app:layout_constraintTop_toBottomOf="@id/tomato_meter" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

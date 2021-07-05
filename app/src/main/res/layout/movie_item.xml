@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:background="@color/white"
+    android:paddingBottom="8dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/image_card_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/chip_group"
+        app:layout_constraintEnd_toStartOf="@id/movie_title"
+        app:layout_constraintHorizontal_weight="40"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/movie_poster"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/ic_poster" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/rating"
+        android:layout_width="40dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rating_corner"
+        android:fontFamily="@font/work_sans_bold"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:translationZ="90dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/movie_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/work_sans_bold"
+        android:paddingStart="0dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/dark_blue"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/star"
+        app:layout_constraintHorizontal_weight="50"
+        app:layout_constraintStart_toEndOf="@id/image_card_view"
+        app:layout_constraintTop_toTopOf="@id/image_card_view"
+        tools:text="@string/movie_title" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/year_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/work_sans_medium"
+        android:textColor="@color/dark_blue_with_opacity"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/movie_title"
+        app:layout_constraintTop_toBottomOf="@id/movie_title"
+        tools:text="2012" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/language_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/work_sans_regular"
+        android:text="@string/language"
+        android:textColor="@color/dark_blue"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/movie_title"
+        app:layout_constraintTop_toBottomOf="@id/year_text" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/language_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/work_sans_bold"
+        android:textColor="@color/dark_blue"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/language_label"
+        app:layout_constraintTop_toTopOf="@id/language_label"
+        tools:text="Eng" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/movie_title"
+        app:layout_constraintTop_toBottomOf="@id/language_label">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/first_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_margin="0dp"
+            android:fontFamily="@font/work_sans_medium"
+            android:textColor="@color/dark_blue"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            app:chipCornerRadius="4dp"
+            tools:text="Action" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        app:drawableTopCompat="@drawable/ic_baseline_star_outline_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/movie_title"
+        app:layout_constraintTop_toTopOf="@id/image_card_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
