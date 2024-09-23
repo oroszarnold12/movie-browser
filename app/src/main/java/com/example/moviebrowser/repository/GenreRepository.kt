@@ -14,11 +14,11 @@ class GenreRepository {
 
     suspend fun getGenres(): List<Genre> {
         try {
-            return genreMemorySource.getGenres() ?:
-            genreService.getGenres().genres.map { it.toGenre() }
-                .also {
-                    genreMemorySource.cacheGenres(it)
-                }
+            return genreMemorySource.getGenres()
+                ?: genreService.getGenres().genres.map { it.toGenre() }
+                    .also {
+                        genreMemorySource.cacheGenres(it)
+                    }
 
         } catch (exception: Exception) {
             throw ServiceException(exception.message, exception)

@@ -1,6 +1,10 @@
 package com.example.ubbassignment2.viewmodel
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.map
+import androidx.lifecycle.viewModelScope
 import com.example.ubbassignment2.model.Movie
 import com.example.ubbassignment2.repository.MovieRepository
 import com.example.ubbassignment2.service.ServiceException
